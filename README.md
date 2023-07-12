@@ -50,18 +50,14 @@
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
-
-
-- **[Add new things]**
 - **[Schema file is created for the project]**
-- **[Data is preserve in json files]**
-- **[A console app is built for the project]**
+- **[Database is connected to rails app]**
+- **[Use database migration files to maintain database schema]**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
-[CLICK HERE](https://drive.google.com/file/d/1YXQAVDRESbPK83F5Q4g3BIn_QL2qbURA/view?usp=sharing) for a video presentation of the project
 
 
 <!-- GETTING STARTED -->
@@ -81,17 +77,18 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  git clone https://github.com/adeola003/my_things_ruby_capstone.git
-  cd my_things_ruby_capstone
+  git clone https://github.com/adeola003/blog_app_rails.git
+  cd blog_app_rails
 ```
 
 ### Install
--Command: bundle install
+-Command: bundle install, npm install
+
 
 
 ### Usage
-- Step 1: Use the ``ruby main.rb`` command to run the app
-- Step 2: Run the tests with `rspec spec`
+- Step 1: Use the `rubocop` command to raise rubocop errors
+- Step 2: `rubocop -A` for autorection
 
 <!-- AUTHORS -->
 
@@ -100,18 +97,6 @@ Clone this repository to your desired folder:
 - GitHub: [@githubhandle](https://github.com/adeola003)
 - Twitter: [@twitterhandle](https://twitter.com/khadaf6)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/abdel-khafid-salaou)
-
-
-👤 **JOSECK OSUGO**
-
-- GitHub: [0sugo](https://github.com/0sugo)
-- Twitter: [@0sugo5](https://twitter.com/osugo5)
-- LinkedIn: [Joseck Osugo](https://www.linkedin.com/in/joseck-osugo/)
-
-👤 **Mussie Kahsay**
-- GitHub: [@MussieTeka](https://github.com/MussieTeka)
-- Twitter: [@mussieteka](https://twitter.com/mussieteka)
-- LinkedIn: [@mussieteka](https://linkedin.com/in/mussieteka)
 
 
 <!-- FUTURE FEATURES -->
@@ -126,7 +111,7 @@ Clone this repository to your desired folder:
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
-Feel free to check the [issue page](https://github.com/adeola003/my_things_ruby_capstone/issues)
+Feel free to check the [issue page](https://github.com/adeola003/blog_app_rails/issues)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -144,7 +129,7 @@ If you like this repo dont forget to give it a star.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-We would like to thank the Microverse community and the partners.
+I would like to thank the Microverse community and the partners.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
