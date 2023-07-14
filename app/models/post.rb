@@ -8,7 +8,7 @@ class Post < ApplicationRecord
   private
 
   def update_posts_counter
-    update(posts_counter: posts.count)
+    author.increment!(:post_counter)
   end
 
   def recent_comments(limit = 5)
