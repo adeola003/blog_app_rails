@@ -1,1 +1,23 @@
-<h1>List of posts per Users</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @user.name %></title>
+</head>
+<body>
+  <h1><%= @user.name %></h1>
+  <p>Number of posts: <%= @user.post_counter %></p>
+  <p>Bio: <%= @user.bio %></p>
+  <img src="<%= @user.photo_url %>" alt="Profile Photo">
+
+  <% if @user.posts.any? %>
+    <h2>User's Posts:</h2>
+    <ul>
+      <% @user.posts.each do |post| %>
+        <li><%= link_to post.title, post_path(post) %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>This user has no posts yet.</p>
+  <% end %>
+</body>
+</html>
