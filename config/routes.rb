@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   get '/posts/:id', to: 'posts#show', as: 'post' # Single post page
 #
   resources :users, only: [:index, :show] do
-  resources :posts, only: [:index, :show]
+  resources :posts, only: [:index, :show, :new, :create] do
+    resources :comments, only: [:create]
   end
+end
+
+post '/posts/:id/like', to: 'posts#like', as: 'like_post'
 end
