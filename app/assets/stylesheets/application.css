@@ -13,3 +13,162 @@
  *= require_tree .
  *= require_self
  */
+
+/* app/assets/stylesheets/application.css */
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Styles for the users page */
+.users-container {
+  display: block;
+  justify-content: center;
+}
+
+.user-div {
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+}
+
+.user-pic {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: black solid 1px;
+  border-radius: 10%;
+  margin-right: 10px;
+}
+
+.user-div a {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.post a {
+  color: #777;
+}
+
+.user-div a:hover {
+  text-decoration: underline;
+}
+
+/* User show */
+.username {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.bio {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+/* Style for the user's posts list */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Style for the "no posts" message */
+.no-post {
+  font-style: italic;
+  color: #777;
+}
+
+/* Style for the "See All Posts" button */
+.see-all-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.see-all-button:hover {
+  background-color: #0056b3;
+}
+
+/* Style for the post container */
+.post-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Style for each post */
+.post {
+  width: 45%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+/* Style for the post title */
+.post h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* Style for the post text */
+.post-text {
+  margin-bottom: 10px;
+}
+
+/* Style for the comments list */
+.comment-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Style for each comment item */
+.comment-list li {
+  margin-bottom: 5px;
+}
+
+/* Style for the post details container */
+.post-details {
+  border: 2px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 40%;
+}
+
+/* Style for the comments container */
+.comments {
+  border: 2px solid #ccc;
+  padding: 10px;
+  width: 40%;
+}
+
+/* Style for the user name in comments */
+.comment-list li strong {
+  font-weight: bold;
+}
+
+/* Style for the "No comments yet" message */
+p.no-comments {
+  font-style: italic;
+  color: #999;
+}
