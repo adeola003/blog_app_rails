@@ -5,21 +5,25 @@
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
-  <h2><%= @post.title %></h2>
-  <p class="post-text"><%= @post.text %></p>
-  <p>Comments: <%= @post.comments_counter %> / Likes: <%= @post.likes_counter %></p>
+  <div class="post-details">
+    <h2><%= @post.title %></h2>
+    <p class="post-text"><%= @post.text %></p>
+    <p>Comments: <%= @post.comments_counter %> / Likes: <%= @post.likes_counter %></p>
+  </div>
 
-  <% if @post.comments.any? %>
-    <h2>Comments:</h2>
-    <ul class="comment-list">
-      <% @post.comments.each do |comment| %>
-        <li>
-          <strong><%= comment.user.name %>:</strong> <%= comment.text %>
-        </li>
-      <% end %>
-    </ul>
-  <% else %>
-    <p>No comments yet.</p>
-  <% end %>
+  <div class="comments">
+    <% if @post.comments.any? %>
+      <h2>Comments:</h2>
+      <ul class="comment-list">
+        <% @post.comments.each do |comment| %>
+          <li>
+            <strong><%= comment.user.name %>:</strong> <%= comment.text %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p class="no-comments">No comments yet.</p>
+    <% end %>
+  </div>
 </body>
 </html>

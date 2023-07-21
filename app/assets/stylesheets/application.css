@@ -141,3 +141,53 @@
   .comment-list li {
     margin-bottom: 5px;
   }
+
+
+
+  /* Style for the post title */
+h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  /* Style for the post text */
+  .post-text {
+    margin-bottom: 20px;
+  }
+
+  /* Style for the post details container */
+  .post-details {
+    border: 2px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 40%;
+  }
+
+  /* Style for the comments container */
+  .comments {
+    border: 2px solid #ccc;
+    padding: 10px;
+    width: 40%;
+  }
+
+  /* Style for the comments list */
+  .comment-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  /* Style for each comment item */
+  .comment-list li {
+    margin-bottom: 10px;
+  }
+
+  /* Style for the user name in comments */
+  .comment-list li strong {
+    font-weight: bold;
+  }
+
+  /* Style for the "No comments yet" message */
+  p.no-comments {
+    font-style: italic;
+    color: #999;
+  }
