@@ -8,11 +8,13 @@ Rails.application.routes.draw do
   get '/users/:user_id/posts', to: 'posts#index_by_user', as: 'user_posts' # All posts by a given user page
   get '/posts/:id', to: 'posts#show', as: 'post' # Single post page
 #
-  resources :users, only: [:index, :show] do
+resources :users, only: [:index, :show] do
   resources :posts, only: [:index, :show, :new, :create] do
     resources :comments, only: [:create]
   end
+  member do
+    post 'like', to: 'posts#like', as: 'like_post'
+  end
 end
 
-post '/posts/:id/like', to: 'posts#like', as: 'like_post'
 end

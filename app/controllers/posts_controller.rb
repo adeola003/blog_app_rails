@@ -30,6 +30,8 @@ class PostsController < ApplicationController
   def like
     @post = Post.find(params[:id])
     @post.likes.create(user: current_user)
+
+    # Redirect back to the post show page after liking
     redirect_to post_path(@post)
   end
 

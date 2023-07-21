@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
   def create
-    @user = User.find(params[:user_id])
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)
     @comment.user = current_user
@@ -8,9 +7,12 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to post_path(@post)
     else
+      @user = @post.user_id # Assuming the author of the post is the user associated with the post
       render 'posts/show'
     end
   end
+
+
 
   private
 
