@@ -2,22 +2,31 @@
 <html>
 <head>
   <title><%= @user.name %></title>
+  <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
-  <h1><%= @user.name %></h1>
-  <p>Number of posts: <%= @user.post_counter %></p>
-  <p>Bio: <%= @user.bio %></p>
-  <img src="<%= @user.photo_url %>" alt="Profile Photo">
+  <div class='user-div'>
+    <img class='user-pic' src="<%= @user.photo_url %>" alt="Profile Photo">
+    <div>
+      <h2 class='username'><%= @user.name %></h2>
+      <p>Number of posts: <%= @user.post_counter %></p>
+    </div>
+  </div>
+  <p class='bio'>Bio: <%= @user.bio %></p>
 
   <% if @user.posts.any? %>
     <h2>User's Posts:</h2>
     <ul>
       <% @user.posts.each do |post| %>
-        <li><%= link_to post.title, post_path(post) %></li>
+        <li class='post'>
+          <%= link_to post.title, post_path(post) %>
+          <br>Comments: <%= pluralize(post.comments_counter, ' ') %> Likes: <%= pluralize(post.likes_counter, ' ') %>
+        </li>
       <% end %>
     </ul>
+      <%= link_to 'See All Posts', user_posts_path(user_id: @user.id), class: 'see-all-button' %>
   <% else %>
-    <p>This user has no posts yet.</p>
+    <p class='no-post'>This user has no posts yet.</p>
   <% end %>
 </body>
 </html>

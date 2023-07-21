@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>All Users</title>
-</head>
 <body>
-  <h1>All Users</h1>
-  <ul>
-    <% @users.each do |user| %>
-      <li>
+  <div class='users-container'>
+  <% @users.each do |user| %>
+      <div class='user-div'>
+      <img class='user-pic' src="<%= user.photo_url %>" alt="User Image">
         <%= link_to "#{user.name} (Number of posts: #{user.post_counter})", user_path(user) %>
-      </li>
+      </div>
     <% end %>
-  </ul>
+  </div>
 </body>
 </html>

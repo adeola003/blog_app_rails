@@ -1,1 +1,29 @@
-<h1>All posts by username</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Posts by <%= @user.name %></title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <h2>All Posts by <%= @user.name %></h2>
+  <% if @posts.any? %>
+    <div class="post-container">
+      <% @posts.each do |post| %>
+        <div class="post">
+          <h3><%= link_to post.title, post_path(post) %></h3>
+          <p class="post-text"><%= truncate(post.text, length: 100) %></p>
+          <p>Comments: <%= post.comments_counter %> / Likes: <%= post.likes_counter %></p>
+          <h4>Comments:</h4>
+          <ul class="comment-list">
+            <% post.comments.each do |comment| %>
+              <li><%= "#{comment.user.name}: #{comment.text}" %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>This user has no posts yet.</p>
+  <% end %>
+</body>
+</html>

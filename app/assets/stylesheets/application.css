@@ -13,3 +13,131 @@
  *= require_tree .
  *= require_self
  */
+
+ /* Styles for the users page */
+  .users-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Adjust the alignment as needed */
+  }
+
+  /* Style for each user's div */
+.user-div {
+    width: 300px; /* Adjust the width of each user's div as needed */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center; /* Aligns the image and text vertically */
+  }
+
+  /* Style for the user's photo */
+  .user-pic {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: black solid 1px;
+    border-radius: 10%;
+    margin-right: 10px;
+  }
+
+  /* Style for the user's name and post counter link */
+  .user-div a {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+
+  .user-div a:hover {
+    text-decoration: underline;
+  }
+
+  /* User show */
+  .username {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  /* Style for the user's bio */
+  .bio {
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  /* Style for the user's posts list */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  /* Style for each post */
+  .post {
+    margin-bottom: 10px;
+    border: solid black 1px;
+    border-radius: 5px;
+    width: 30%;
+  }
+
+  .post a {
+    color: #777;
+  }
+
+  /* Style for the "no posts" message */
+  .no-post {
+    font-style: italic;
+    color: #777;
+  }
+
+  /* Style for the "See All Posts" button */
+.see-all-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .see-all-button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Style for the post container */
+.post-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /* Style for each post */
+  .post {
+    width: 45%; /* Adjust the width as needed */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 10px;
+  }
+
+  /* Style for the post title */
+  .post h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  /* Style for the post text */
+  .post-text {
+    margin-bottom: 10px;
+  }
+
+  /* Style for the comments list */
+  .comment-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  /* Style for each comment item */
+  .comment-list li {
+    margin-bottom: 5px;
+  }
