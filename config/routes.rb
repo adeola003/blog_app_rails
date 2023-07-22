@@ -21,4 +21,5 @@ resources :posts, only: [] do
   post 'like', to: 'likes#create', on: :member
 end
 
+
 end

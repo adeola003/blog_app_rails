@@ -15,7 +15,6 @@ class PostsController < ApplicationController
     @post = @user.posts.new
   end
 
-
   def create
     @user = User.find(params[:user_id])
     @post = @user.posts.new(post_params)
@@ -28,6 +27,14 @@ class PostsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def like
+    @post = Post.find(params[:id])
+    @post.likes.create(user: current_user)
+
+    # Redirect back to the previous page after liking
+    redirect_back(fallback_location: root_path)
   end
 
   private

@@ -7,7 +7,7 @@ class Like < ApplicationRecord
   private
 
   def update_likes_counter
-    puts "Updating likes counter..."
+    puts 'Updating likes counter...'
     post.update(likes_counter: post.likes.count)
   end
 end
