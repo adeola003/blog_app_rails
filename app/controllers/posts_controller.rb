@@ -19,20 +19,15 @@ class PostsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @post = @user.posts.new(post_params)
+    @post.likes_counter = 0
+    @post.comments_counter = 0
 
     if @post.save
-      redirect_to post_path(@post)
+      flash[:success] = 'Your post was sent'
+      redirect_to users_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
-  end
-
-  def like
-    @post = Post.find(params[:id])
-    @post.likes.create(user: current_user)
-
-    # Redirect back to the post show page after liking
-    redirect_to post_path(@post)
   end
 
   private

@@ -6,6 +6,7 @@
 </head>
 <body>
   <h2>All Posts by <%= @user.name %></h2>
+  <%= link_to "Create New Post", new_user_post_path(@user) %>
   <% if @posts.any? %>
     <div class="post-container">
       <% @posts.each do |post| %>
