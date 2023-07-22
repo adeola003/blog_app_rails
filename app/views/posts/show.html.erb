@@ -2,7 +2,6 @@
 <html>
 <head>
   <title><%= @post.title %></title>
-  <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
   <div class="post-details">
@@ -31,6 +30,10 @@
       <%= f.text_area :text, placeholder: "Write your comment here..." %>
       <%= f.submit "Submit" %>
       <% end %>
+    </div>
+
+     <div class="like-button">
+      <%= button_to "Like", like_post_path(@post), method: :post %>
     </div>
 
 

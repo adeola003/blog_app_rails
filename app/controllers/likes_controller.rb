@@ -5,6 +5,7 @@ class LikesController < ApplicationController
     @like = @post.likes.build(user: current_user)
 
     if @like.save
+      @post.update_likes_counter
       redirect_to post_path(@post)
     else
       flash[:error] = 'Failed to like the post.'
