@@ -28,5 +28,6 @@
   <% else %>
     <p class='no-post'>This user has no posts yet.</p>
   <% end %>
+  <%= link_to "Create New Post", new_user_post_path(@user) %>
 </body>
 </html>

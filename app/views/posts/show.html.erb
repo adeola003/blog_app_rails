@@ -2,7 +2,6 @@
 <html>
 <head>
   <title><%= @post.title %></title>
-  <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
   <div class="post-details">
@@ -24,6 +23,23 @@
     <% else %>
       <p class="no-comments">No comments yet.</p>
     <% end %>
+
+    <div class="comment-form">
+      <h2>Add a Comment:</h2>
+      <%= form_for([@post, Comment.new], url: user_post_comments_path(@post.author_id, @post.id)) do |f| %>
+      <%= f.text_area :text, placeholder: "Write your comment here..." %>
+      <%= f.submit "Submit" %>
+      <% end %>
+    </div>
+
+     <div class="like-button">
+  <%= button_to "Like", like_post_path(@post), method: :post %>
+</div>
+
+
+
+</div>
   </div>
+
 </body>
 </html>
