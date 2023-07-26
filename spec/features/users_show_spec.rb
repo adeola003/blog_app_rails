@@ -20,21 +20,17 @@ RSpec.describe 'User Show', type: :feature do
   it 'redirects to the user post index page when clicking "See All Posts"' do
     visit user_path(@user)
 
-    expect(page).to have_content('See All Posts') # Verify that the link text is present on the page
-
-    # Add this line to save and open the page in a browser for debugging
+    expect(page).to have_content('See All Posts')
     save_and_open_page
 
-    click_link 'See All Posts'
+    find_link('See All Posts', wait: 10).click
     expect(current_path).to eq(user_posts_path(@user))
   end
 
   it 'redirects to the post show page when clicking on a post title' do
     visit user_path(@user)
 
-    expect(page).to have_content(@post1.title) # Verify that the post title is present on the page
-
-    # Add this line to save and open the page in a browser for debugging
+    expect(page).to have_content(@post1.title)
     save_and_open_page
 
     click_link @post1.title
@@ -42,9 +38,7 @@ RSpec.describe 'User Show', type: :feature do
 
     visit user_path(@user)
 
-    expect(page).to have_content(@post2.title) # Verify that the post title is present on the page
-
-    # Add this line to save and open the page in a browser for debugging
+    expect(page).to have_content(@post2.title)
     save_and_open_page
 
     click_link @post2.title
@@ -54,9 +48,9 @@ RSpec.describe 'User Show', type: :feature do
   it 'redirects to the new post page when clicking "Create New Post"' do
     visit user_path(@user)
 
-    expect(page).to have_content('Create New Post') # Verify that the link text is present on the page
+    expect(page).to have_content('Create New Post')
 
-    # Add this line to save and open the page in a browser for debugging
+
     save_and_open_page
 
     click_link 'Create New Post'

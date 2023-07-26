@@ -24,10 +24,10 @@
         </li>
       <% end %>
     </ul>
-      <%= link_to 'See All Posts', user_posts_path(user_id: @user.id), class: 'see-all-button' %>
   <% else %>
     <p class='no-post'>This user has no posts yet.</p>
   <% end %>
   <%= link_to "Create New Post", new_user_post_path(@user) %>
+  <%= link_to 'See All Posts', user_posts_path(user_id: @user.id), class: 'see-all-button' %>
 </body>
 </html>
