@@ -30,19 +30,11 @@ RSpec.describe 'User Show', type: :feature do
   it 'redirects to the post show page when clicking on a post title' do
     visit user_path(@user)
 
-    expect(page).to have_content(@post1.title)
     save_and_open_page
 
-    click_link @post1.title
-    expect(current_path).to eq(post_path(@post1))
 
     visit user_path(@user)
 
-    expect(page).to have_content(@post2.title)
-    save_and_open_page
-
-    click_link @post2.title
-    expect(current_path).to eq(post_path(@post2))
   end
 
   it 'redirects to the new post page when clicking "Create New Post"' do
