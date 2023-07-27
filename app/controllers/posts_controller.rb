@@ -3,8 +3,8 @@ class PostsController < ApplicationController
     # Code to fetch all posts by the user with the specified ID and pass them to the view
     # @user = User.find(params[:user_id])
     # @posts = @user.posts
-    @user = User.includes(:posts).includes(:comments).find(params[:user_id])
-    @posts = @user.posts
+    @user = User.includes(posts: %i[comments likes]).find(params[:user_id])
+    @posts = @user.posts.includes(:comments)
   end
 
   def show
