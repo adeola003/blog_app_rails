@@ -1,17 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe 'User Post Index', type: :feature do
-  let(:user) { User.first }
+  let!(:user) { User.create!(name: 'Tom', bio: 'Teacher from Mexico.', photo_url: 'https://unsplash.com/photos/F_-0BxGuVvo') }
 
   before(:each) do
-    # Assuming you have at least one user in the database
-    @post1 = user.posts.create(title: 'Post 1', text: 'This is the first post.')
-    @post2 = user.posts.create(title: 'Post 2', text: 'This is the second post.')
+    # Create posts for the user
     visit user_posts_path(user)
   end
 
   it 'displays the user profile picture, username, and number of posts' do
-
+    puts dele = user.name
     expect(page).to have_content("All Posts by #{user.name}")
   end
 
