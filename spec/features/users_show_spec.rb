@@ -49,7 +49,8 @@ RSpec.describe 'User Show', type: :feature do
   end
 
   it 'displays all the first 3 posts for a specific user' do
-    @post3 = @user.posts.create(title: 'Post 3', text: 'This is the third post to check if the first three posts are displayed.')
+    @post3 = @user.posts.create(title: 'Post 3',
+                                text: 'This is the third post to check if the first three posts are displayed.')
     visit user_path(@user)
 
     expect(page).to have_content('Post 1')
