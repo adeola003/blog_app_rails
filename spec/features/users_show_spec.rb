@@ -38,4 +38,22 @@ RSpec.describe 'User Show', type: :feature do
     click_link 'Create New Post'
     expect(current_path).to eq(new_user_post_path(@user))
   end
+
+  it 'shows a button that can let you view all of the post for a specific user' do
+    visit user_path(@user)
+
+    expect(page).to have_content('See All Posts')
+
+    click_link 'See All Posts'
+    expect(current_path).to eq(user_posts_path(user_id: @user.id))
+  end
+
+  it 'displays all the first 3 posts for a specific user' do
+    @post3 = @user.posts.create(title: 'Post 3', text: 'This is the third post to check if the first three posts are displayed.')
+    visit user_path(@user)
+
+    expect(page).to have_content('Post 1')
+    expect(page).to have_content('Post 2')
+    expect(page).to have_content('Post 3')
+  end
 end
