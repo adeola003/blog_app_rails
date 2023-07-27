@@ -9,7 +9,7 @@ RSpec.describe 'User Post Index', type: :feature do
   end
 
   it 'displays the user profile picture, username, and number of posts' do
-    puts dele = user.name
+    puts user.name
     expect(page).to have_content("All Posts by #{user.name}")
   end
 
@@ -18,7 +18,7 @@ RSpec.describe 'User Post Index', type: :feature do
   end
 
   it 'displays the number of comments and number of likes for each post' do
-    expect(page).to have_content("This user has no posts yet.")
+    expect(page).to have_content('This user has no posts yet.')
   end
 
   it 'redirects to the new post page when clicking "Create New Post"' do

@@ -24,8 +24,8 @@ RSpec.describe 'Users Index', type: :feature do
   it 'displays the number of posts each user has written' do
     visit users_path
 
-    expect(page).to have_content("Number of posts: 3", count: 1)
-    expect(page).to have_content("Number of posts: 5", count: 1)
+    expect(page).to have_content('Number of posts: 3', count: 1)
+    expect(page).to have_content('Number of posts: 5', count: 1)
   end
 
   it 'redirects to the user show page when clicking on a user' do

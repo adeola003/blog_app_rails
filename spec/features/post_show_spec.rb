@@ -17,11 +17,11 @@ RSpec.describe 'Post Show', type: :feature do
   end
 
   it 'displays the number of comments and number of likes for the post' do
-    expect(page).to have_content("Comments: / Likes:")
+    expect(page).to have_content('Comments: / Likes:')
   end
 
   it 'displays comments when they exist' do
-    comment = post.comments.create(user: user, text: 'This is a sample comment.')
+    comment = post.comments.create(user:, text: 'This is a sample comment.')
     visit post_path(post)
     expect(page).to have_content(comment.text)
     expect(page).to have_content("#{comment.user.name}:")

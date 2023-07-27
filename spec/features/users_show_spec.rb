@@ -11,7 +11,7 @@ RSpec.describe 'User Show', type: :feature do
   it 'displays the user profile picture and information' do
     visit user_path(@user)
     expect(page).to have_content(@user.name)
-    expect(page).to have_content("Number of posts: 4")
+    expect(page).to have_content('Number of posts: 4')
     expect(page).to have_content(@user.bio)
   end
 
@@ -19,7 +19,6 @@ RSpec.describe 'User Show', type: :feature do
     visit user_path(@user)
 
     expect(page).to have_content('See All Posts')
-    save_and_open_page
 
     find_link('See All Posts', wait: 10).click
     expect(current_path).to eq(user_posts_path(@user))
@@ -28,20 +27,13 @@ RSpec.describe 'User Show', type: :feature do
   it 'redirects to the post show page when clicking on a post title' do
     visit user_path(@user)
 
-    save_and_open_page
-
-
     visit user_path(@user)
-
   end
 
   it 'redirects to the new post page when clicking "Create New Post"' do
     visit user_path(@user)
 
     expect(page).to have_content('Create New Post')
-
-
-    save_and_open_page
 
     click_link 'Create New Post'
     expect(current_path).to eq(new_user_post_path(@user))
