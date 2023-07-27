@@ -27,4 +27,8 @@ RSpec.describe 'User Post Index', type: :feature do
     click_link 'Create New Post'
     expect(current_path).to eq(new_user_post_path(user))
   end
+
+  it 'has pagination link' do
+    expect(page).to have_content('Pagination')
+  end
 end
