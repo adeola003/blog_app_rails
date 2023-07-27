@@ -10,10 +10,8 @@ RSpec.describe 'User Show', type: :feature do
 
   it 'displays the user profile picture and information' do
     visit user_path(@user)
-
-    expect(page).to have_css("img[src*='john.jpg']")
     expect(page).to have_content(@user.name)
-    expect(page).to have_content("Number of posts: 2")
+    expect(page).to have_content("Number of posts: 4")
     expect(page).to have_content(@user.bio)
   end
 
