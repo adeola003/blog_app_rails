@@ -10,17 +10,23 @@ RSpec.describe 'User Post Index', type: :feature do
   end
 
   it 'displays the username and number of posts' do
-    puts user.name
+    # puts @post1.comments_counter
+    puts @post1.likes_counter
     expect(page).to have_content("All Posts by #{user.name}")
     expect(page).to have_content("Number of posts: #{user.post_counter}")
   end
 
   it "displays the post's title and part of the post's body" do
     expect(page).to have_content('Post 1')
+    expect(page).to have_content('This is the first post.')
   end
 
-  it 'displays the number of comments and number of likes for each post' do
-    expect(page).to have_content('Comments: / Likes:')
+  it 'displays the number of likes for each post' do
+    expect(page).to have_content('No likes yet')
+  end
+
+  it 'displays the number of comments for each post' do
+    expect(page).to have_content('No Comments yet')
   end
 
   it 'redirects to the new post page when clicking "Create New Post"' do

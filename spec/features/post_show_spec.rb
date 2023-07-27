@@ -17,7 +17,8 @@ RSpec.describe 'Post Show', type: :feature do
   end
 
   it 'displays the number of comments and number of likes for the post' do
-    expect(page).to have_content('Comments: / Likes:')
+    expect(page).to have_content('No Comments yet')
+    expect(page).to have_content('No likes yet')
   end
 
   it 'displays comments when they exist' do

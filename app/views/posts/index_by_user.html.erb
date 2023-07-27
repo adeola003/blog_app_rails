@@ -14,7 +14,16 @@
         <div class="post">
           <h3><%= link_to post.title, post_path(post) %></h3>
           <p class="post-text"><%= truncate(post.text, length: 100) %></p>
-          <p>Comments: <%= post.comments_counter %> / Likes: <%= post.likes_counter %></p>
+          <% if post.comments.any? %>
+            <p>Comments: <%= post.comments_counter %></p>
+          <% else %>
+            <p>No Comments yet</p>
+          <% end %>
+          <% if post.likes.any? %>
+            <p>Likes: <%= post.likes_counter %></p>
+          <% else %>
+            <p>No likes yet</p>
+          <% end %>
           <h4>Comments:</h4>
           <ul class="comment-list">
             <% post.comments.each do |comment| %>
