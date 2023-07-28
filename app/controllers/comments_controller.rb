@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to post_path(@post)
     else
-      @user = @post.user_id # Assuming the author of the post is the user associated with the post
+      @user = @post.user_id
       render 'posts/show'
     end
   end

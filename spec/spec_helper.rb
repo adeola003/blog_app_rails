@@ -1,4 +1,6 @@
 require 'rails_helper'
+require 'capybara/rspec'
+require 'capybara/rails'
 require_relative '../app/models/post'
 require_relative '../app/models/user'
 require_relative '../app/models/comment'

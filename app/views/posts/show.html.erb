@@ -7,7 +7,16 @@
   <div class="post-details">
     <h2><%= @post.title %></h2>
     <p class="post-text"><%= @post.text %></p>
-    <p>Comments: <%= @post.comments_counter %> / Likes: <%= @post.likes_counter %></p>
+     <% if @post.comments.any? %>
+            <p>Comments: <%= @post.comments_counter %></p>
+          <% else %>
+            <p>No Comments yet</p>
+          <% end %>
+          <% if @post.likes.any? %>
+            <p>Likes: <%= @post.likes_counter %></p>
+          <% else %>
+            <p>No likes yet</p>
+          <% end %>
   </div>
 
   <div class="comments">

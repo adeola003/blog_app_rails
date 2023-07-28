@@ -98,6 +98,11 @@ Clone this repository to your desired folder:
 - Twitter: [@twitterhandle](https://twitter.com/khadaf6)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/abdel-khafid-salaou)
 
+👤 **TayyabKM**
+
+- Github: [@TayyabKM](https://github.com/Tayyab-Kamboh)
+- Twitter: [@TayyabI83126361](https://twitter.com/TayyabI83126361)
+- Linkedin: [@tayyab-irfan-01b72b1aa](https://www.linkedin.com/in/tayyab-irfan-01b72b1aa/)
 
 <!-- FUTURE FEATURES -->
 
