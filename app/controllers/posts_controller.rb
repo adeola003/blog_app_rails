@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index_by_user
     # Code to fetch all posts by the user with the specified ID and pass them to the view
     # @user = User.find(params[:user_id])
@@ -29,6 +31,11 @@ class PostsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @post.destroy
+    redirect_to posts_url, notice: 'Post was successfully deleted.'
   end
 
   def like
