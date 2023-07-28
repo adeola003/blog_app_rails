@@ -12,4 +12,9 @@ class User < ApplicationRecord
   def recent_posts(limit = 3)
     posts.order(id: :desc).limit(limit)
   end
+
+  def set_default
+    self.name ||= email.split('@')[0]
+    self.posts_counter ||= 0
+  end
 end
