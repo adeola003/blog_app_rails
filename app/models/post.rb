@@ -8,11 +8,16 @@ class Post < ApplicationRecord
   has_many :likes
 
   after_save :update_posts_counter
+  before_destroy :decrement_posts_counter
 
   private
 
   def update_posts_counter
     author.increment!(:post_counter)
+  end
+
+  def decrement_posts_counter
+    author.decrement!(:post_counter)
   end
 
   def recent_comments(limit = 5)
