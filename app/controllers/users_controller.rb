@@ -5,7 +5,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    # Code to fetch the user with the specified ID and pass it to the view
-    @user = User.find(params[:id])
+    if params[:id] == 'sign_out'
+      sign_out current_user
+      redirect_to root_path, notice: 'Signed out successfully.'
+    else
+      @user = User.find(params[:id])
+    end
   end
 end

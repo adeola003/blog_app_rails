@@ -12,6 +12,11 @@
 
   <body>
   <h1><%= link_to "Blog App", root_path %></h1>
+  <% if user_signed_in? %>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+    <% else %>
+      <%= link_to 'Login', new_user_session_path, class: 'btn btn-primary' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
