@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   before_action :set_comment, only: [:destroy]
 
   def create
@@ -34,8 +33,6 @@ class CommentsController < ApplicationController
   # def find_comment
   #   @comment = @post.comments.find(params[:id])
   # end
-
-  private
 
   def comment_params
     params.require(:comment).permit(:text)

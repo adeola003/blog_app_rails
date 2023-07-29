@@ -40,7 +40,6 @@ class PostsController < ApplicationController
     redirect_to root_path, notice: 'Post was successfully deleted.'
   end
 
-
   def like
     @post = Post.find(params[:id])
     @post.likes.create(user: current_user)
