@@ -1,7 +1,24 @@
 require 'rails_helper'
 
-RSpec.describe 'Api::Posts', type: :request do
-  describe 'GET /index' do
-    pending "add some examples (or delete) #{__FILE__}"
+require 'swagger_helper'
+
+RSpec.describe 'Posts API', type: :request, swagger_doc: 'v1/swagger.json' do
+  path '/api/v1/posts' do
+    get 'Retrieves all posts' do
+      tags 'Posts'
+      produces 'application/json'
+      response '200', 'OK' do
+        schema type: :array,
+               items: {
+                 properties: {
+                   id: { type: :integer },
+                   title: { type: :string },
+                   text: { type: :string }
+                 }
+               }
+        run_test!
+      end
+    end
   end
 end
+
