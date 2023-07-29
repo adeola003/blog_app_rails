@@ -18,4 +18,8 @@ class User < ApplicationRecord
     self.name ||= email.split('@')[0]
     self.post_counter ||= 0
   end
+
+  def admin?
+    role == 'admin'
+  end
 end
