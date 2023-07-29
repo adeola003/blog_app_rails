@@ -22,10 +22,6 @@
           <%= link_to post.title, post_path(post) %>
           <br>Comments: <%= pluralize(post.comments_counter, ' ') %> Likes: <%= pluralize(post.likes_counter, ' ') %>
         </li>
-          <% if can? :destroy, post %>
-          <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure you want to delete this post?' } %>
-          <% end %>
-
       <% end %>
     </ul>
   <% else %>

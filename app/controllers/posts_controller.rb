@@ -34,9 +34,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    puts params[:id] # Debugging line to check the value of params[:id]
+    @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_url, notice: 'Post was successfully deleted.'
+    redirect_to root_path, notice: 'Post was successfully deleted.'
   end
+
 
   def like
     @post = Post.find(params[:id])

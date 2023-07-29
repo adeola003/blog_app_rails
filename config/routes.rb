@@ -18,9 +18,12 @@ resources :users, only: [:index, :show] do
   end
 end
 
-resources :posts, only: [] do
+resources :posts, only: [:destroy] do
   post 'like', to: 'likes#create', on: :member
 end
+
+# Route for deleting comments
+resources :comments, only: [:destroy]
 
 
 end
