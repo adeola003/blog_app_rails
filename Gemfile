@@ -12,10 +12,8 @@ gem 'devise'
 # cancancan
 gem 'cancancan'
 
-#
 gem 'active_model_serializers', '~> 0.10.13'
 
-#
 gem 'rack-cors'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

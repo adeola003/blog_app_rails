@@ -4,7 +4,8 @@ class Api::CommentsController < ApplicationController
     @comments = @post.comments
     render json: @comments
   end
-def create
+
+  def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)
     @comment.user = current_user # Assuming you have authentication set up.
@@ -21,5 +22,4 @@ def create
   def comment_params
     params.require(:comment).permit(:text)
   end
-  
 end
